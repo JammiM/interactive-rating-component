@@ -24,4 +24,5 @@
 
 body {
   background-color: #141518;
+  color: var(--clr-neutral-white);
 }
