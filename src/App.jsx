@@ -9,8 +9,8 @@ function App() {
     <>
       <main>
         <FeedbackForm></FeedbackForm>
-        <FeedbackResult></FeedbackResult>
-        <div className="attribution"></div>
+        {/* <FeedbackResult></FeedbackResult> */}
+        {/* <div className="attribution">ssss</div> */}
       </main>
     </>
   );
