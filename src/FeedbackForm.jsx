@@ -4,15 +4,27 @@ import starIcon from "./assets/starter-files/images/icon-star.svg";
 const RatingAmount = [1, 2, 3, 4, 5];
 
 const RatingList = RatingAmount.map((singleValue, index) => (
-  <div key={index}>
+  <React.Fragment key={index}>
     <input
-      className="ratings__singleButton"
-      key={index}
-      type="button"
+      type="radio"
+      name="buttonGroup"
+      id={singleValue}
       value={singleValue}
     />
-  </div>
+    <label className="ratings__singleButton" htmlFor={singleValue}>
+      {singleValue}
+    </label>
+  </React.Fragment>
 ));
+
+function submitRating(e) {
+  e.preventDefault();
+
+  const expense = new FormData(e.target);
+  const ratingValue = expense.get("buttonGroup");
+
+  console.log(ratingValue);
+}
 
 function FeedbackForm() {
   return (
@@ -29,7 +41,7 @@ function FeedbackForm() {
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </p>
-      <form id="feedbackForm" action="" method="post">
+      <form id="feedbackForm" onSubmit={(event) => submitRating(event)}>
         <div className="ratings__buttonGroup">{RatingList}</div>
         <input id="feedbackFormBtn" type="submit" value="SUBMIT" />
       </form>
