@@ -4,7 +4,7 @@ import { SharedContext } from "./context/FunctionProvider";
 
 const RatingAmount = [1, 2, 3, 4, 5];
 
-function FeedbackForm() {
+function FeedbackForm({ setShowFeedBack }) {
   const { setSharedValue, sharedValue } = useContext(SharedContext);
 
   const submitRating = (e) => {
@@ -14,6 +14,8 @@ function FeedbackForm() {
     const ratingValue = expense.get("buttonGroup");
 
     console.log("submitRating fired");
+
+    setShowFeedBack(true);
   };
 
   function handleRatingClick(ratingValue) {

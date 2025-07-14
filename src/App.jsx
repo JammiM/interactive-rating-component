@@ -5,15 +5,20 @@ import FeedbackForm from "./FeedbackForm";
 import FeedbackResult from "./FeedbackResult";
 
 import { SharedProvider } from "./context/FunctionProvider";
+import { useState } from "react";
 
 function App() {
+  const [showFeedBack, setShowFeedBack] = useState(false);
+
   return (
     <>
       <main>
         <SharedProvider>
-          <FeedbackForm></FeedbackForm>
-          <FeedbackResult></FeedbackResult>
-          {/* <div className="attribution">ssss</div> */}
+          {showFeedBack ? (
+            <FeedbackResult />
+          ) : (
+            <FeedbackForm setShowFeedBack={setShowFeedBack}></FeedbackForm>
+          )}
         </SharedProvider>
       </main>
     </>
