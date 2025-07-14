@@ -4,22 +4,8 @@ import { SharedContext } from "./context/FunctionProvider";
 
 const RatingAmount = [1, 2, 3, 4, 5];
 
-const RatingList = RatingAmount.map((singleValue, index) => (
-  <React.Fragment key={index}>
-    <input
-      type="radio"
-      name="buttonGroup"
-      id={singleValue}
-      value={singleValue}
-    />
-    <label className="ratings__singleButton" htmlFor={singleValue}>
-      {singleValue}
-    </label>
-  </React.Fragment>
-));
-
 function FeedbackForm() {
-  const { setSharedValue } = useContext(SharedContext);
+  const { setSharedValue, sharedValue } = useContext(SharedContext);
 
   const submitRating = (e) => {
     e.preventDefault();
@@ -27,9 +13,27 @@ function FeedbackForm() {
     const expense = new FormData(e.target);
     const ratingValue = expense.get("buttonGroup");
 
-    console.log(ratingValue);
-    setSharedValue(ratingValue);
+    console.log("submitRating fired");
   };
+
+  function handleRatingClick(ratingValue) {
+    setSharedValue(ratingValue);
+  }
+
+  const RatingList = RatingAmount.map((singleValue, index) => (
+    <React.Fragment key={index}>
+      <input
+        type="radio"
+        name="buttonGroup"
+        id={singleValue}
+        value={singleValue}
+        onClick={() => handleRatingClick(singleValue)}
+      />
+      <label className="ratings__singleButton" htmlFor={singleValue}>
+        {singleValue}
+      </label>
+    </React.Fragment>
+  ));
 
   return (
     <article id="feedbackContainer">
@@ -47,7 +51,12 @@ function FeedbackForm() {
       </p>
       <form id="feedbackForm" onSubmit={(event) => submitRating(event)}>
         <div className="ratings__buttonGroup">{RatingList}</div>
-        <input id="feedbackFormBtn" type="submit" value="SUBMIT" />
+        <input
+          id="feedbackFormBtn"
+          disabled={sharedValue == ""}
+          type="submit"
+          value="SUBMIT"
+        />
       </form>
     </article>
   );
