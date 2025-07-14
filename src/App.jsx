@@ -1,16 +1,20 @@
-import { useState } from "react";
 import "./main.css";
-import FeedbackForm from "./FeedbackForm";
 import "./axeTestingHandler";
+
+import FeedbackForm from "./FeedbackForm";
 import FeedbackResult from "./FeedbackResult";
+
+import { SharedProvider } from "./context/FunctionProvider";
 
 function App() {
   return (
     <>
       <main>
-        <FeedbackForm></FeedbackForm>
-        {/* <FeedbackResult></FeedbackResult> */}
-        {/* <div className="attribution">ssss</div> */}
+        <SharedProvider>
+          <FeedbackForm></FeedbackForm>
+          <FeedbackResult></FeedbackResult>
+          {/* <div className="attribution">ssss</div> */}
+        </SharedProvider>
       </main>
     </>
   );

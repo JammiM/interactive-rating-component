@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SharedContext } from "./context/FunctionProvider";
 
 function FeedbackResult() {
+  const { sharedValue } = useContext(SharedContext);
+
   return (
     <article id="FeedbackResult">
-      You selected {/* Add rating here */} out of 5 Thank you! We appreciate you
-      taking the time to give a rating. If you ever need more support, don’t
-      hesitate to get in touch!
+      You selected <strong>{sharedValue}</strong> out of 5 Thank you! We
+      appreciate you taking the time to give a rating. If you ever need more
+      support, don’t hesitate to get in touch!
     </article>
   );
 }
