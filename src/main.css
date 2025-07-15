@@ -37,11 +37,9 @@ body {
 #feedbackContainer {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  border-radius: 20px;
-  gap: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  gap: 2rem;
 
   background: var(--clr-neutral-grey-900);
   background: linear-gradient(
@@ -52,9 +50,9 @@ body {
 }
 
 .feedbackContainer__logo {
-  width: 50px;
+  width: 4rem;
   background-color: var(--clr-neutral-grey-900);
-  padding: 10px;
+  padding: 0.8rem;
   border-radius: 50%;
 }
 
@@ -71,13 +69,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .ratings__singleButton {
-  width: 50px;
+  width: 2.5rem;
   background-color: var(--clr-neutral-grey-900);
-  padding: 10px;
+  padding: 0.5rem;
   border-radius: 50%;
   color: var(--clr-neutral-grey-500);
   text-align: center;
@@ -85,9 +83,9 @@ body {
 
 #feedbackFormBtn {
   background-color: var(--clr-primary-orange-500);
-  border-radius: 20px;
+  border-radius: 2rem;
   width: 100%;
-  padding: 5px;
+  padding: 0.5rem;
   line-height: 1.5;
 }
 
@@ -97,12 +95,12 @@ input[type="radio"][name="buttonGroup"] {
 
 input[type="radio"][name="buttonGroup"]:checked + label {
   background-color: var(--clr-primary-orange-500);
-  color: black;
+  color: var(--clr-neutral-grey-950);
 }
 
 #feedbackFormBtn:active {
   background-color: var(--clr-neutral-white);
-  color: black;
+  color: var(--clr-neutral-grey-950);
 }
 
 #feedbackResultContainer {
@@ -110,11 +108,9 @@ input[type="radio"][name="buttonGroup"]:checked + label {
   flex-direction: column;
   align-items: center;
 
-  padding: 20px;
-  border-radius: 20px;
-  gap: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  gap: 2rem;
 
   background: var(--clr-neutral-grey-900);
   background: linear-gradient(
@@ -125,8 +121,8 @@ input[type="radio"][name="buttonGroup"]:checked + label {
 }
 
 .feedbackResultContainer__value {
-  padding: 8px;
-  border-radius: 20px;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
 
   color: var(--clr-primary-orange-500);
   background-color: var(--clr-neutral-grey-900);
