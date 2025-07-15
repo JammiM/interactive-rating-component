@@ -29,6 +29,8 @@ body {
 
 main {
   max-width: 25rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .overpass-font {
   font-family: "Overpass", sans-serif;
@@ -90,6 +92,9 @@ main {
   width: 100%;
   padding: 0.5rem;
   line-height: 1.5;
+  letter-spacing: 0.2rem;
+  font-weight: var(--fw-bold);
+
   cursor: pointer;
 }
 
