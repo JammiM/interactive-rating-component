@@ -6,6 +6,7 @@ import FeedbackResult from "./FeedbackResult";
 
 import { SharedProvider } from "./context/FunctionProvider";
 import { useState } from "react";
+import { AnimatePresence } from "motion/react";
 
 function App() {
   const [showFeedBack, setShowFeedBack] = useState(false);
@@ -14,11 +15,13 @@ function App() {
     <>
       <main>
         <SharedProvider>
-          {showFeedBack ? (
-            <FeedbackResult />
-          ) : (
-            <FeedbackForm setShowFeedBack={setShowFeedBack}></FeedbackForm>
-          )}
+          <AnimatePresence>
+            {showFeedBack ? (
+              <FeedbackResult />
+            ) : (
+              <FeedbackForm setShowFeedBack={setShowFeedBack}></FeedbackForm>
+            )}
+          </AnimatePresence>
         </SharedProvider>
       </main>
     </>
