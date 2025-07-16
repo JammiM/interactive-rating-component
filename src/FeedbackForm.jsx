@@ -11,8 +11,8 @@ function FeedbackForm({ setShowFeedBack }) {
   const submitRating = (e) => {
     e.preventDefault();
 
-    const expense = new FormData(e.target);
-    const ratingValue = expense.get("buttonGroup");
+    // const expense = new FormData(e.target);
+    // const ratingValue = expense.get("buttonGroup");
 
     console.log("submitRating fired");
 
@@ -65,7 +65,7 @@ function FeedbackForm({ setShowFeedBack }) {
         <div className="ratings__buttonGroup">{RatingList}</div>
         <input
           id="feedbackFormBtn"
-          disabled={sharedValue == ""}
+          disabled={sharedValue === ""}
           type="submit"
           value="SUBMIT"
         />
