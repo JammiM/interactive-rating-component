@@ -28,11 +28,11 @@ function FeedbackForm({ setShowFeedBack }) {
       <input
         type="radio"
         name="buttonGroup"
-        id={singleValue}
+        id={`bg-${singleValue}`}
         value={singleValue}
         onClick={() => handleRatingClick(singleValue)}
       />
-      <label className="ratings__singleButton" htmlFor={singleValue}>
+      <label className="ratings__singleButton" htmlFor={`bg-${singleValue}`}>
         {singleValue}
       </label>
     </React.Fragment>
@@ -63,12 +63,13 @@ function FeedbackForm({ setShowFeedBack }) {
       </p>
       <form id="feedbackForm" onSubmit={(event) => submitRating(event)}>
         <div className="ratings__buttonGroup">{RatingList}</div>
-        <input
+        <button
           id="feedbackFormBtn"
           disabled={sharedValue === ""}
           type="submit"
-          value="SUBMIT"
-        />
+        >
+          SUBMIT
+        </button>
       </form>
     </motion.article>
   );
